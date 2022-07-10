@@ -20,6 +20,7 @@ const Jewelry = () => {
   console.log(jewelry)
   return (
     <div>
+      <h1 style={{textAlign:'center', marginTop: "0", paddingTop: "90px"}}>Jewelry category</h1>
       <ItemCard items={jewelry}/>
     </div>
   )

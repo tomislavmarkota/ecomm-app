@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const MainWrapper = styled.div`
   background: #eaeded;
+  padding-top: 70px;
 `;
 
 export const CategoryContainer = styled.div`

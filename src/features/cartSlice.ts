@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Product } from "./productSlice";
+import { toast } from "react-toastify";
 
 type State = {
   cart: Product[];
@@ -23,9 +24,15 @@ const cartSlice = createSlice({
       );
       if (index >= 0) {
         state.cart[index].amount += 1;
+        toast.info(`Increased ${action.payload.title} amount`, {
+          position: "bottom-left"
+        })
       } else {
         const templateProduct = { ...action.payload, amount: 1 };
         state.cart.push(templateProduct);
+        toast.success(`${action.payload.title} added to cart!`, {
+          position: "bottom-left"
+        })
       }
     },
     decreaseCart(state, action) {
@@ -34,17 +41,25 @@ const cartSlice = createSlice({
       );
       if (state.cart[index].amount > 1) {
         state.cart[index].amount -= 1;
+        toast.warning("Decreased cart quantity", {
+          position: "bottom-left"
+        })
       } else if (state.cart[index].amount === 1) {
         const newArr = state.cart.filter(
           (item) => item.id !== action.payload.id
         );
         state.cart = newArr;
+        toast.error(`${action.payload.title} removed from cart`, {
+          position: "bottom-left"
+        })
       }
     },
     removeItem(state, action) {
       const newArr = state.cart.filter((item) => item.id !== action.payload.id);
       state.cart = newArr;
-      console.log(newArr);
+      toast.error(`${action.payload.title} removed from cart`, {
+        position: "bottom-left"
+      })
     },
     calculate(state) {
       const { quantity, total } = state.cart.reduce(

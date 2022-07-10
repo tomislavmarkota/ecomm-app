@@ -13,10 +13,13 @@ import NavBar from "./components/navbar/NavBar";
 import SideBar from "./components/sidebar/SideBar";
 import Cart from "./components/cart/Cart";
 import { calculate } from "./features/cartSlice";
+// Toastify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
-  const cart = useAppSelector(state => state.cart.cart)
-  const {cartTotalAmount, cartTotalQuantity} = useAppSelector((state) =>state.cart)
+  const cart = useAppSelector((state) => state.cart.cart);
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -24,12 +27,12 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(calculate())
-  }, [dispatch, cart ])
+    dispatch(calculate());
+  }, [dispatch, cart]);
 
-  console.log(cartTotalAmount, cartTotalQuantity)
   return (
     <BrowserRouter>
+      <ToastContainer autoClose={1500} />
       <NavBar />
       <SideBar />
       <Routes>

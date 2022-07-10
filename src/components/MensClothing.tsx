@@ -20,7 +20,7 @@ const MensClothing = () => {
   console.log(cart)
   return (
     <div>
-      <h1 style={{textAlign:'center'}}>Men's clothing category</h1>
+      <h1 style={{textAlign:'center', marginTop: "0", paddingTop: "90px"}}>Men's clothing category</h1>
       <ItemCard items={mensClothes}/>
     </div>
   )

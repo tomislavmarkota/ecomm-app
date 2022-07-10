@@ -1,8 +1,8 @@
 // images
 import electronics from "../assets/electronics.jpg";
-import jewelry from "../assets/jewelery.jpg";
-import mensclothing from "../assets/mensclothing.jpg";
-import womensclothing from "../assets/womensclothing.jpg";
+import jewelry from "../assets/jewelry.png"
+import mensclothing from "../assets/mensclothing.png"
+import womensclothing from "../assets/womensclothing.png"
 //preloader
 import Preloader from "./Preloader";
 // styled components
@@ -19,7 +19,7 @@ const Home: React.FC = () => {
   const {cart} = useAppSelector(state => state.cart)
   if(loading) return <Preloader />
   if(error) return <h2>{error}</h2>
-  console.log(cart)
+  
   return (
     <MainWrapper>
        <h1 style={{margin: "0", textAlign: "center", paddingTop:"20px"}}>Pick your category</h1>

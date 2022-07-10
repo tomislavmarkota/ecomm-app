@@ -20,7 +20,7 @@ const WomensClothing = () => {
 
   return (
     <div>
-      <h1 style={{textAlign:'center'}}>Women's clothing category</h1>
+      <h1 style={{textAlign:'center', marginTop: "0", paddingTop: "90px"}}>Women's clothing category</h1>
       <ItemCard items={womensClothes}/>
     </div>
   )

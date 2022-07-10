@@ -40,5 +40,9 @@ export const StyledCard = styled.div`
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
+    :hover{
+      background-color: #232F3E;
+      color: white;
+    }
   }
 `;

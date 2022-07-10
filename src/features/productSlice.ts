@@ -8,6 +8,7 @@ export type Product = {
   category: string;
   description: string;
   image: string;
+  amount: number;
 };
 
 type State = {

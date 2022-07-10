@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { fetchWomensClothes } from '../features/womensClothesSlice'
 import { useAppDispatch, useAppSelector } from '../hooks'
+import ItemCard from './item/ItemCard'
 import Preloader from './Preloader'
 
 const WomensClothing = () => {
@@ -19,7 +20,8 @@ const WomensClothing = () => {
 
   return (
     <div>
-      
+      <h1 style={{textAlign:'center'}}>Women's clothing category</h1>
+      <ItemCard items={womensClothes}/>
     </div>
   )
 }

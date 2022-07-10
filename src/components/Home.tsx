@@ -1,6 +1,3 @@
-// components
-import SideBar from "./sidebar/SideBar";
-import NavBar from "./navbar/NavBar";
 // images
 import electronics from "../assets/electronics.jpg";
 import jewelry from "../assets/jewelery.jpg";
@@ -14,21 +11,18 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { fetchProducts } from "../features/productSlice";
+import ItemCard from "./item/ItemCard";
 
 
 const Home: React.FC = () => {
   const {loading, products, error} = useAppSelector((state) => state.products);
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
-
+  const {cart} = useAppSelector(state => state.cart)
   if(loading) return <Preloader />
   if(error) return <h2>{error}</h2>
-
+  console.log(cart)
   return (
     <MainWrapper>
+       <h1 style={{margin: "0", textAlign: "center", paddingTop:"20px"}}>Pick your category</h1>
       <CategoryContainer>
         <FlexWrapper>
           <div>
@@ -55,6 +49,8 @@ const Home: React.FC = () => {
           </div>
         </FlexWrapper>
       </CategoryContainer>
+      <h1 style={{textAlign: "center"}}>All products</h1>
+      <ItemCard items={products}/>
     </MainWrapper>
   );
 };

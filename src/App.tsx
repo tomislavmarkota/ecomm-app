@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import { useAppDispatch } from "./hooks";
+import { fetchProducts } from "./features/productSlice";
+// router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Components
 import Home from "./components/Home";
@@ -9,6 +13,13 @@ import NavBar from "./components/navbar/NavBar";
 import SideBar from "./components/sidebar/SideBar";
 
 function App() {
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
   return (
     <BrowserRouter>
       <NavBar />

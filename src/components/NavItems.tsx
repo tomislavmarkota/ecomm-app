@@ -25,6 +25,10 @@ const NavItems = () => {
         Electronics
         <FiChevronRight />
       </Link>
+      <Link to="/cart">
+        Cart
+        <FiChevronRight />
+      </Link>
     </>
   );
 };

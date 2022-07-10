@@ -39,5 +39,6 @@ export const StyledCard = styled.div`
     border: none;
     border-radius: 4px;
     font-weight: bold;
+    cursor: pointer;
   }
 `;

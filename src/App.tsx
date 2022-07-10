@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAppDispatch } from "./hooks";
+import { useAppDispatch, useAppSelector } from "./hooks";
 import { fetchProducts } from "./features/productSlice";
 // router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,15 +11,23 @@ import Jewelry from "./components/Jewelry";
 import Electronics from "./components/Electronics";
 import NavBar from "./components/navbar/NavBar";
 import SideBar from "./components/sidebar/SideBar";
+import Cart from "./components/cart/Cart";
+import { calculate } from "./features/cartSlice";
 
 function App() {
-
+  const cart = useAppSelector(state => state.cart.cart)
+  const {cartTotalAmount, cartTotalQuantity} = useAppSelector((state) =>state.cart)
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(calculate())
+  }, [dispatch, cart ])
+
+  console.log(cartTotalAmount, cartTotalQuantity)
   return (
     <BrowserRouter>
       <NavBar />
@@ -30,6 +38,7 @@ function App() {
         <Route path="/womens" element={<WomensClothing />} />
         <Route path="/jewelry" element={<Jewelry />} />
         <Route path="/electronics" element={<Electronics />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );

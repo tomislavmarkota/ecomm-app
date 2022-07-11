@@ -6,34 +6,44 @@ export const StyledSlider = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1250px;
+  margin: 0px auto 50px auto;
   text-align: center;
   z-index: 10;
   img {
     width: 100%;
-    height: 480px;
+    height: 500px;
     object-fit: cover;
   }
   svg {
     font-size: 3rem;
-    color: #232F3E;
+    color: #fff;
+    transition: transform .7s ease;
+    :hover{
+      transform: scale(1.2);
+    }
   }
   .left-arrow {
     position: absolute;
     top: 50%;
-    left: 12%;
+    left: 0%;
     cursor: pointer;
     user-select: none;
     z-index: 5;
+    @media screen and (max-width: 675px) {
+      top: 90%;
+    }
   }
   .right-arrow {
     position: absolute;
     top: 50%;
-    right: 12%;
+    right: 0%;
     cursor: pointer;
     user-select: none;
     z-index: 5;
+    @media screen and (max-width: 675px) {
+      top: 90%;
+    }
   }
 
   .slide {
@@ -45,5 +55,6 @@ export const StyledSlider = styled.section`
     opacity: 1;
     transition-duration: 1s;
     transform: scale(1.08);
+    width: 100%;
   }
 `;

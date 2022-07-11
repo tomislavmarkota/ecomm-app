@@ -5,7 +5,7 @@ import { StyledSlider } from "./styledSlider";
 
 
 const Slider = () => {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(2);
   const length = slideData.length;
 
   const nextSlide = () => {

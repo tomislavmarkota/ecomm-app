@@ -13,6 +13,7 @@ export const StyledSlider = styled.section`
   img {
     width: 100%;
     height: 480px;
+    object-fit: cover;
   }
   svg {
     font-size: 3rem;

@@ -6,13 +6,13 @@ export const StyledSlider = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
   text-align: center;
   z-index: 10;
   img {
     width: 100%;
-    height: 400px;
+    height: 480px;
   }
   svg {
     font-size: 3rem;

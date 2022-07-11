@@ -1,3 +1,5 @@
+// router
+import { Link } from "react-router-dom";
 // images
 import electronics from "../assets/electronics.jpg";
 import jewelry from "../assets/jewelry.png"
@@ -7,10 +9,7 @@ import womensclothing from "../assets/womensclothing.png"
 import Preloader from "./Preloader";
 // styled components
 import { CategoryContainer, FlexWrapper, MainWrapper } from "./styledHome";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../hooks";
-import { fetchProducts } from "../features/productSlice";
+import {  useAppSelector } from "../hooks";
 import ItemCard from "./item/ItemCard";
 import Slider from "./slider/Slider";
 
@@ -50,6 +49,7 @@ const Home: React.FC = () => {
           </div>
         </FlexWrapper>
       </CategoryContainer>
+      <Slider />
       <h1 style={{textAlign: "center"}}>All products</h1>
       <ItemCard items={products}/>
     </MainWrapper>

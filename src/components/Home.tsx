@@ -23,10 +23,8 @@ const Home: React.FC = () => {
   
   return (
     <MainWrapper>
-      <Slider />
       <h1 style={{marginTop: "40px", textAlign: "center", paddingTop:"20px"}}>Pick your category</h1>
       <CategoryContainer>
-
         <FlexWrapper>
           <div>
             <h2>Men's clothing</h2>

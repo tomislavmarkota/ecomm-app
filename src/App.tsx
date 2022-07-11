@@ -13,9 +13,11 @@ import NavBar from "./components/navbar/NavBar";
 import SideBar from "./components/sidebar/SideBar";
 import Cart from "./components/cart/Cart";
 import { calculate } from "./features/cartSlice";
+import Slider from "./components/slider/Slider";
 // Toastify
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
+
 
 function App() {
   const cart = useAppSelector((state) => state.cart.cart);

@@ -7,6 +7,7 @@ export const NavWrapper = styled.nav`
   align-items: center;
   padding: 5px 10px;
   width: 100%;
+  z-index: 11;
   div {
     padding: 8px 9px;
     color: white;

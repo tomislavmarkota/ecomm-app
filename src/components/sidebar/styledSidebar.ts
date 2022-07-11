@@ -4,7 +4,7 @@ export const StyleSidebarWrapper = styled.div`
   width: 400px;
   height: 100%;
   background-color: #ffffff;
-  z-index: 1000;
+  
   h2 {
     padding: 10px 20px;
   }
@@ -24,7 +24,6 @@ export const StyleSidebarWrapper = styled.div`
 export const Overlay = styled.div`
   width: 100%;
   height: 100%;
-
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
 `;
@@ -36,4 +35,5 @@ export const Wrapper = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1000;
 `;

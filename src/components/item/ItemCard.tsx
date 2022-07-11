@@ -18,7 +18,7 @@ const ItemCard: React.FC<Props> = ({ items }) => {
             <h5>{item.title}</h5>
             <span>${item.price}</span>
             <button onClick={() => dispatch(addToCart(item))}>Add to Cart</button>
-            <button>View details</button>
+           
         </StyledCard>
     ))}
   </StyledCardWrapper>

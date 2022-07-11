@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { fetchProducts } from "../features/productSlice";
 import ItemCard from "./item/ItemCard";
+import Slider from "./slider/Slider";
 
 
 const Home: React.FC = () => {
@@ -22,8 +23,10 @@ const Home: React.FC = () => {
   
   return (
     <MainWrapper>
-       <h1 style={{margin: "0", textAlign: "center", paddingTop:"20px"}}>Pick your category</h1>
+      <Slider />
+      <h1 style={{marginTop: "40px", textAlign: "center", paddingTop:"20px"}}>Pick your category</h1>
       <CategoryContainer>
+
         <FlexWrapper>
           <div>
             <h2>Men's clothing</h2>
